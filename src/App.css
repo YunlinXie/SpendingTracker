@@ -6,6 +6,9 @@ li {
   display: inline-block;
 }
 
+.spending-date, .spending-amount {
+  margin-bottom: 20px;
+}
 .spending-date label {
-  margin-right: 15px;
+  margin-right: 23px;
 }
