@@ -35,19 +35,20 @@ export default class SpendingSummary extends React.Component {
 
     render() {
         return (
-
             <table>
+                <thead>
                 <tr>
                     <th>Month</th>
                     <th>Year</th>
                     <th>Spending</th>
                 </tr>
 
+                </thead>
+                <tbody>
                 {
                     this.state.data.map(MonthlySpending)
                 }
-
-
+                </tbody>
             </table>
 
         );
