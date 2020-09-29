@@ -4,8 +4,17 @@ export default class AddSpending extends React.Component {
 
     constructor() {
         super();
+        const date = new Date();
+        const month = date.getMonth() + 1;
+        const day =  date.getDate();
+        const mdToStr = (md) => (md < 10 ? "0" : "") + md;
+        const datestr = "" + date.getFullYear() + "-" + mdToStr(month) + "-" + mdToStr(day);
+        console.log(datestr);
+
+
         this.state = {
-            date: "2018-01-01",
+            // date: "2018-01-01",
+            date: datestr,
             amount: "",
             // amount: "0.00",
         }
