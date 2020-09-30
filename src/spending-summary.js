@@ -13,25 +13,16 @@ export default class SpendingSummary extends React.Component {
             here we use fake data directly
         **/
         // asynchronous callback.
-        this.setState((state, props) => ({
-            data: [
-                {
-                    month: 9,
-                    year: 2020,
-                    spending: 8888.88
-                },
-                {
-                    month: 8,
-                    year: 2020,
-                    spending: 4000.00
-                },
-
-            ]
-        }));
-        console.log("hello");
-
+        const spendingSummaryAPI_URL = "https://oeqrjaqvrj.execute-api.us-west-2.amazonaws.com/default/getSpendingSummary";
+        fetch(spendingSummaryAPI_URL)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.setState((state, props) => ({
+                    data
+                }));
+            });
     }
-
 
     render() {
         return (
